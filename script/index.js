@@ -6,7 +6,7 @@ ptFlag.addEventListener("mouseenter", () => {
     ptFlag.style.backgroundImage = "url('./assets/flags/PT_Inv.svg')";
     fieldText.innerHTML = 'português';
 
-    document.getElementById("descript_text").innerHTML = "<b>[nota:]</b> virar o dispositivo horizontalmente e utilizar </br> <i>headphones</i> para uma melhor experiência."
+    document.getElementById("descript_text").innerHTML = "<b>[nota:]</b> selecionar <i>fullscreen</i> [f11] horizontal no dispositivo</br> e utilizar <i>headphones</i> para uma melhor experiência."
 });
 
 ptFlag.addEventListener("mouseleave", () => {
@@ -18,7 +18,7 @@ engFlag.addEventListener("mouseenter", () => {
     engFlag.style.backgroundImage = "url('./assets/flags/UK_Inv.svg')";
     fieldText.innerHTML = 'english';
 
-    document.getElementById("descript_text").innerHTML = "<b>[note:]</b> turn your device horizontally and wear </br> headphones for a better experience."
+    document.getElementById("descript_text").innerHTML = "<b>[note:]</b> turn your device into horizontal fullscreen [f11]</br> and wear headphones for a better experience."
 });
 
 engFlag.addEventListener("mouseleave", () => {
