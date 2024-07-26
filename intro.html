@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>[Re]Connect - [introduction]</title>
+    <link rel="stylesheet" href="./style/general.css">
+    <link rel="icon" href="./assets/Logo.svg" sizes="any" type="image/svg+xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <audio id="bg_audio" loop><source src="./assets/Ambient_BG.mp3" type="audio/mpeg"></audio>
+    <div id="overlay_texture"></div>
+    <div id="intro_text"></div>
+    <button id="intro_advance">[advance >]</button>
+    <div id="intro_logo_img">
+        <img id="descript_logo" src="./assets/LogoHoriz.svg">
+    </div>
+</body>
+<script>
+    let audio = document.getElementById("bg_audio");
+    window.onload = function(){
+       let prog = parent.document.URL.substring(parent.document.URL.indexOf('?lang=') + 12, parent.document.URL.length-1);
+       audio.currentTime = prog;
+       audio.play();
+       audio.volume = 0.2;
+    }
+    
+    var qs = parent.document.URL.substring(parent.document.URL.indexOf('?lang=') + 6, parent.document.URL.indexOf('?lang=') + 9);
+    let language = qs;
+
+    if (language == 'prt') {
+        document.getElementById("intro_advance").innerHTML = "[avançar >]";
+        document.getElementById("intro_text").innerHTML = "[re]connect consiste numa experiência audiovisual focada no conceito de [brincar] enquanto atividade expressiva. com este projeto, o [jogador] é convidado a interagir com uma série de diferentes artefactos, todos estes desenvolvidos computacionalmente diversos <i>mediums</i>, mas todos centrados num objetivo e motivo comum - a transformação de [play data](dados de brincar?) em peças performativas de <i>data-art</i> num meio digital. espera-se que estas potenciem um momento de reflexão em volta de tópicos como conexão, memória e propósito, ou apenas sirvam como uma pequena mas divertida experiência. brinquemos…";
+    }
+    else {
+        document.getElementById("intro_text").innerHTML = "[re]connect is an audiovisual experience centered around the concept of [play] as an expressive activity. in this project, the [player] is invited to interact with a series of different artifacts, all being developed computationally across different <i>mediums</i> but with all showing a common <i>motif</i> and goal - transforming [play data] into performative digital data-art pieces, that will hopefully lead to a reflection upon topics such as connection, memory and purpose, or at least provide a fun and meaningful little experience. so? let the [play] begin…";
+    }
+    document.getElementById('intro_advance').addEventListener("click", () => {
+        let prog = audio.currentTime;
+        location.href = "./play.html?lang=" + qs + '&t=' + prog;
+    })
+</script>
+
+</html>

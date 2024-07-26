@@ -1,0 +1,70 @@
+@import './variables.scss';
+
+.nav_bar{
+    font-family: "Roboto Mono Regular";
+    font-size: $text_med_size;
+    color: $acc_color;
+    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    grid-row: 2 / 3;
+    cursor: url('../assets/PointerCursor.svg'), pointer;
+}
+
+.nav_bar:hover{
+    font-family: "Roboto Mono Medium";
+}
+
+#about_files, #credits_files, #archive_files, #files_files{
+    grid-column: 3 / 5;
+}
+
+#about_archive, #credits_archive, #archive_archive, #files_archive{
+    grid-column: 5 / 7;
+}
+
+
+#about_about, #credits_about, #archive_about, #files_about{
+    grid-column: 7 / 9;
+}
+
+
+#about_credits, #credits_credits, #archive_credits, #files_credits{
+    grid-column: 9 / 11;
+}
+
+#about_text, #credits_text{
+    box-sizing: border-box;
+    border: 2.5px solid $acc_color;
+    grid-column: 3 / 11;
+    grid-row: 4 / 8;
+    color: $acc_color;
+    font-family: "Roboto Mono Regular";
+    font-size: $text_med_size;
+    padding: $gap_desktop;
+    overflow: scroll;
+
+    text-align: center;
+
+    legend{
+        text-align:left;
+        width: revert;
+    }
+
+}
+
+#about_logo_img, #credits_logo_img{
+    grid-column: 6 / 8;
+    grid-row: 9 / 10;
+    img{
+        width:70%;
+    }
+}
+
+#download_thesis{
+    grid-column: 6 / 8;
+    grid-row: 8 / 9;
+    font-size: $text_min_size;
+    height: math.div($row_desktop, 2);
+}

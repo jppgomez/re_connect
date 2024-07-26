@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>[Re]Connect - [credits]</title>
+    <link rel="stylesheet" href="./style/general.css">
+    <link rel="icon" href="./assets/Logo.svg" sizes="any" type="image/svg+xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <audio id="bg_audio" loop>
+        <source src="./assets/Ambient_BG.mp3" type="audio/mpeg">
+    </audio>
+    <div id="overlay_texture"></div>
+    <div id="credits_files" class="nav_bar">[files]</div>
+    <div id="credits_archive" class="nav_bar">[archive]</div>
+    <div id="credits_about" class="nav_bar">[about]</div>
+    <div id="credits_credits" class="nav_bar"><b>[credits]</b></div>
+
+    <fieldset id="credits_text">
+        <legend>[credits]</legend>
+    </fieldset>
+    <div id="credits_logo_img">
+        <img id="descript_logo" src="./assets/LogoHoriz.svg">
+    </div>
+</body>
+<script>
+    let audio = document.getElementById("bg_audio");
+    window.onload = function () {
+        let prog = parent.document.URL.substring(parent.document.URL.indexOf('?lang=') + 12, parent.document.URL.length - 1);
+        audio.currentTime = prog;
+        audio.play();
+        audio.volume = 0.1;
+    }
+
+    var qs = parent.document.URL.substring(parent.document.URL.indexOf('?lang=') + 6, parent.document.URL.indexOf('?lang=') + 9);
+    let language = qs;
+
+    let files = document.getElementById('credits_files');
+    let archive = document.getElementById('credits_archive');
+    let about = document.getElementById('credits_about');
+    let credits = document.getElementById('credits_credits');
+    let creditsText = document.getElementById('credits_text');
+    let creditsTextLegend = document.querySelector('#credits_text legend');
+
+
+    files.addEventListener("click", () => {
+        let prog = audio.currentTime;
+        location.href = "./files.html?lang=" + qs + '&t=' + prog});
+    archive.addEventListener("click", () => {
+        let prog = audio.currentTime;
+        location.href = "./archive.html?lang=" + qs + '&t=' + prog});
+    about.addEventListener("click", () => {
+        let prog = audio.currentTime;
+        location.href = "./about.html?lang=" + qs + '&t=' + prog});
+
+    if (qs == "prt") {
+        files.innerHTML = '[ficheiros]';
+        archive.innerHTML = '[arquivo]';
+        credits.innerHTML = '<b>[créditos]</b>';
+        about.innerHTML = '[sobre]';
+        //creditsText.innerHTML = ''
+        creditsTextLegend.innerHTML = '[créditos]';
+        let leg = "<legend>[créditos]</legend>";
+        creditsText.innerHTML = leg + "<b>[re]connect - from play-data to audiovisual performance</b><br>todos os conteúdos apresentados neste projeto foram desenvolvidos por João Pedro Gomes, com a exceção de alguns recursos fornecidos pelas fontes abaixo e licenciados de acordo com as necessidades do projeto.<br>fontes: roboto mono - fonts.google<br>texturas & alguns efeitos sonoros: elements.envato<br>instrumentos (<i>samples</i>): spitfire audio<br>ilustração da máquina de garra: Filipa Vilhena <3<br><br>quero ainda agradecer a todos aqueles que de alguma forma contribuíram para o desenvolvimento deste projeto:<br>aos meus pais, Sandrina e Paulo, pelo amor e apoio incondicional, e por permitirem todo este tipo de oportunidades<br>aos meus avós e tios-avós, Maria Deolinda, Joaquim, Manuel, Sizaltina, Teresa e Armando, pela motivação e cuidado <br>à Filipa, por toda a paciência e compreensão, pelas conversas e pelas ideias quando estas mais eram precisas <br>aos meus orientadores, professor Luís Lucas Pereira e professor Pedro Martins, pela ajuda e direção, bem como aos professores Pedro Martins e Amílcar Cardoso e aos membros do júri professores Tiago Cruz e Jônatas Manzolli, pela discussão e <i>feedback</i> <br>ao pessoal da Vieira, por me re-lembrarem do que é voltar a casa <br>aos meus colegas de curso e todos os que conheci nestes últimos cinco anos, por me acompanharem e permitirem viver e crescer desde 2019, sempre com novas ideias e perspectivas <br>a todos os que testaram e contribuíram com os seus <i>play-data</i><br>a todos os artistas, investigadores, pensadores e escritores que de algum modo contribuíram para a direção deste projeto<br>à cidade de Coimbra <br>ao <b>[play]</b><br><br> João Pedro Gomes<br>(uc2019213017)<br> :)";
+    }
+    else {
+        let leg = "<legend>[credits]</legend>";
+        creditsText.innerHTML = leg + "<b>[re]connect - from play-data to audiovisual performance</b><br>all the content presented in this website was produced by João Pedro Gomes, with the exception of a few external resources provided by the following sources and licensed according to the project's needs.<br>fonts: roboto mono - fonts.google<br>textures & some sound effects: elements.envato<br>sampled instruments: spitfire audio<br>toy crane illustration: Filipa Vilhena <3<br><br>I also want to thank everyone that helped through the development of this project: <br>to my parents, Sandrina and Paulo, for the endless love and support and for blessing me with this kind of opportunities <br>to my grandparents and grand-aunts, Maria Deolinda, Joaquim, Manuel, Sizaltina, Teresa e Armando, for all the encouragement and care <br>to Filipa, for all the patience and comprehension and conversations, and for providing helpful ideas when in need<br>to my advisors, professor Luís Lucas Pereira and professor Pedro Martins, for the help and guidance, and to professors Pedro Martins and Amílcar Cardoso, as well as to the jurors professors Tiago Cruz and Jônatas Manzolli for the discussion and feedback <br>to all my friends from Vieira, for reminding me what it feels to come back home <br>to all the people that I met along this journey, for accompanying the best five years of my life this far, and providing new ideas and outlooks on the most diverse topics <br>to all the ones that tested, and contributed with play-data <br>to all the thinkers, researcher, writers and artists that shaped what this project became <br>to the city of Coimbra <br>to <b>[play]</b><br><br> João Pedro Gomes<br>(uc2019213017)<br> :)"
+    }
+</script>
+
+</html>

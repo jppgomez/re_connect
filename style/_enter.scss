@@ -1,0 +1,35 @@
+@import "./variables.scss";
+
+#button_container {
+    grid-column: 6 / 8;
+    grid-row: 5 / 7;
+    display: flex;
+    align-items: center;
+
+    #enter_button {
+        font-size: $text_med_size;
+        height: $row_desktop;
+        width: 100%;
+    }
+}
+
+#descript {
+    grid-column: 5 / 9;
+    grid-row: 8 / 11;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#descript_logo {
+    width: 35%;
+}
+
+
+#descript_text {
+    color: $acc_color;
+    font-family: "Roboto Mono Thin";
+    font-size: $text_min_size;
+    text-align: center;
+}

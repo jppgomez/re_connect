@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>[Re]Connect - [archive]</title>
+    <link rel="stylesheet" href="./style/general.css">
+    <link rel="icon" href="./assets/Logo.svg" sizes="any" type="image/svg+xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <audio id="bg_audio" loop>
+        <source src="./assets/Ambient_BG.mp3" type="audio/mpeg">
+    </audio>
+    <div id="overlay_texture"></div>
+    <div id="archive_files" class="nav_bar">[files]</div>
+    <div id="archive_archive" class="nav_bar"><b>[archive]</b></div>
+    <div id="archive_about" class="nav_bar">[about]</div>
+    <div id="archive_credits" class="nav_bar">[credits]</div>
+
+    <!--<div id="archive_return_container"><button id="archive_return">[< retreat]</button>
+    </div>!-->
+    <div id="archive_advance_container"><button id="archive_advance">[advance >]</button></div>
+
+    <div id="archive_1" class="archive_div"></div>
+    <div id="archive_2" class="archive_div"></div>
+    <div id="archive_3" class="archive_div"></div>
+    <div id="archive_4" class="archive_div"></div>
+    <div id="archive_5" class="archive_div"></div>
+    <div id="archive_6" class="archive_div"></div>
+</body>
+<script>
+    let audio = document.getElementById("bg_audio");
+    window.onload = function(){
+       let prog = parent.document.URL.substring(parent.document.URL.indexOf('?lang=') + 12, parent.document.URL.length-1);
+       audio.currentTime = prog;
+       audio.play();
+       audio.volume = 0.1;
+    }
+
+    var qs = parent.document.URL.substring(parent.document.URL.indexOf('?lang=') + 6, parent.document.URL.indexOf('?lang=') + 9);
+    let language = qs;
+
+    let files = document.getElementById('archive_files');
+    let archive = document.getElementById('archive_archive');
+    let about = document.getElementById('archive_about');
+    let credits = document.getElementById('archive_credits');
+
+    let advance = document.getElementById('archive_advance');
+    //let ret = document.getElementById('archive_return');
+
+    files.addEventListener("click", () => location.href = "./files.html?lang=" + qs + '&t=' + prog);
+    credits.addEventListener("click", () => location.href = "./credits.html?lang=" + qs + '&t=' + prog);
+    about.addEventListener("click", () => location.href = "./about.html?lang=" + qs + '&t=' + prog);
+
+    if (qs == "prt") {
+        files.innerHTML = '[ficheiros]';
+        archive.innerHTML = '<b>[arquivo]</b>';
+        credits.innerHTML = '[créditos]';
+        about.innerHTML = '[sobre]';
+        advance.innerHTML = '[avançar >]';
+        //ret.innerHTML = '[< retornar]';
+    }
+</script>
+<script src="./script/archive.js"></script>
+
+</html>

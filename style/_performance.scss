@@ -1,0 +1,10 @@
+@import './variables';
+
+#advance_files {
+    z-index: 5;
+    font-size: $text_min_size;
+    display: none;
+    grid-column: 6 / 8;
+    grid-row: 9 / 10;
+    height: math.div($row_desktop, 2);
+}

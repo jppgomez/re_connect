@@ -1,0 +1,68 @@
+@import './variables.scss';
+
+//3508 x 4961
+//w x x
+$score_w: 4*$col_desktop + $gap_desktop;
+
+fieldset {
+   border: 2.5px solid $acc_color;
+   margin: 0;
+   
+   legend {
+      color: $acc_color;
+      font-family: "Roboto Mono Regular";
+      font-size: $text_med_size;
+      width: 20%;
+      padding: 0 $gap_desktop;
+   }
+   color: $acc_color;
+   font-family: "Roboto Mono Thin";
+   font-size: $text_med_size;
+   padding: 2*$gap_desktop;
+   
+   #score_frame{
+      border: none;
+      width: $score_w;
+      height: $score_w + math.div($gap_desktop, 2);
+      background-image: url('../assets/LoaderGif.gif');
+      background-position: center center;
+      background-size:40% auto;
+      background-repeat:no-repeat;
+   }
+
+   canvas{
+      border: 2.5px solid $acc_color;
+      display: none;
+      z-index:-5;
+   }
+}
+
+#prologue {
+   grid-column: 2 / 8;
+   grid-row: 2 / 9;
+   overflow-y:scroll;
+}
+
+#score {
+   grid-column: 8 / 12;
+   grid-row: 2 / 9;
+   text-align:center;
+   display:flex;
+   justify-content: center;
+   align-items: top;
+   
+   #graphic_score_canvas{
+      width:100%;
+      height:100%;
+      text-align:center;
+   }
+}
+
+#advance {
+   font-size: $text_min_size;
+   display: none;
+   grid-column: 11 / 12;
+   grid-row: 9 / 10;
+   height: math.div($row_desktop, 2);
+}
+

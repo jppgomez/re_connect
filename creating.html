@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>[Re]Connect - [creating]</title>
+    <link rel="stylesheet" href="./style/general.css">
+    <link rel="icon" href="./assets/Logo.svg" sizes="any" type="image/svg+xml">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/15.0.4/Tone.js" integrity="sha512-uXz2Ei+QJ4i9e32kXNq+rX/MBgiEEn0wESna9ebpNFStqpfFGEiq1QRfqwXMBZMoU5ZRD3iqQp539jXNFTLlgQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"
+        integrity="sha512-zInFF17qBFVvvvFpIfeBzo7Tj7+rQxLeTJDmbxjBz5/zIr89YVbTNelNhdTT+/DCrxoVzBeUPVFJsczKbB7sew=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <audio id="bg_audio" loop>
+        <source src="./assets/Ambient_BG.mp3" type="audio/mpeg">
+    </audio>
+    <div id="overlay_texture"></div>
+    <fieldset id="prologue">
+        <legend>[prologue]</legend>
+        
+    </fieldset>
+    <fieldset id="score">
+        <legend>[score]</legend>
+        <div id="score_frame"></div>
+    </fieldset>
+    <button id="advance">[advance >]</button>
+    <footer>
+        <div id="logo"><img src="./assets/FooterLogo.svg"></div>
+        <div id="play"><img id="play_img" src="./assets/icons/Play.svg"></div>
+        <div id="pause"><img id="pause_img" src="./assets/icons/Pause.svg"></div>
+        <div id="state_text"></div>
+        <div id="load_bar">
+            <div id="load_wrapper">
+                <div id="load_prog"></div>
+            </div>
+        </div>
+        <div id="volume_mute" class="mute"><img id="volume_img" src="./assets/icons/VolumeOff.svg"></div>
+    </footer>
+</body>
+<script>
+    let audio = document.getElementById("bg_audio");
+    window.onload = function () {
+        let prog = parent.document.URL.substring(parent.document.URL.indexOf('?lang=') + 12, parent.document.URL.length - 1);
+        audio.currentTime = prog;
+        audio.play();
+        audio.volume = 0.2;
+    }
+
+    let progressLoaderText;
+    var qs = parent.document.URL.substring(parent.document.URL.indexOf('?lang=') + 6, parent.document.URL.indexOf('?lang=') + 9);
+    if (qs == 'prt') {
+        progressLoaderText = ['carregando', 'carregando.', 'carregando..', 'carregando...'];
+        let leg = "<legend>[prefácio]</legend>";
+        document.getElementById("prologue").innerHTML = leg + "então? foi divertido?<br>esta página serve como um interlúdio para a experiência, uma sala de espera, enquanto o [jogador] espera pelo desenvolvimento / geração dos três artefactos relacionados com a experiência anterior. já agora, este pode ser um bom espaço para explorar um pouco mais os conceitos base por detrás deste projeto. <br>[brincar] é fundamentalmente definido como uma atividade não produtiva, despreocupada, sem qualquer seriedade, significado ou objetivo (Huizinga, 1938), mas, definições teóricas à parte, pode ser nomeada como uma das atividades fundamentais da humanidade, sendo presente em diversas e distintas áreas como a arte, ciência ou educação, e sendo uma parte fulcral da evolução e desenvolvimento da nossa sociedade. <br>[brincar] pode ser encontrado em todo o lado, principalmente por se tudo se poder tornar numa [brincadeira] desde que para isso exista vontade, independentemente do que ou de onde seja, o que traz ao [brincar] a denominação de atitude apropriativa, tomando conta de um contexto, e tornando-o algo mais divertido e despreocupado. <br>[brincar] é uma das principais atividades realizadas por muitos seres pouco após o seu nascimento, sendo por isso muitas vezes associado principalmente a crianças, mas esta atividade pode ser encontrada em outros cenários mais associados à vida jovem / adulta, seja através da expressão artística (música, teatro ou <i>performance</i>), sátira política, comédia, festas, eventos, entre outros. <br>[brincar] enquanto atitude pode ser algo extremamente expressivo, revelando características do [jogador], pelo modo como interage com o [jogo], permitindo-lhe uma visão mais completa das pessoas, coisas e do mundo à sua volta, sendo assim apenas lógica a correlação proposta entre [brincar] e personalidade presente numa experiência de exploração artística como esta. :) <br>continuando, a tecnologia pode também ser integralmente conectada com o [brincar], expandindo a capacidade [<i>brincável</i>] de objetos ou criando novos [recreios] para explorar, mas ultimamente tem-se notado exatamente o contrário. com os recentes avanços tecnológicos, as pessoas têm deixado de [brincar],cedendo cada vez mais à crescente velocidade do mundo, perseguindo um maior nível de seriedade, gratificação e desapêgo que deixam menos espaço para [brincar], o que, quando adicionado ao isolamento e egoísmo crescentes, cria um mundo fraturado, inorgânico e menos livre. <br>este projeto surge da ideia de [re]conexão através do [brincar], conectando as pessoas e o mundo à sua volta, aproveitando as vantagens da tecnologia na criação de novos espaços para [brincar], descobrir, refletir e discutir (todos parte do [brincar]), sem qualquer seriedade, significado ou objetivo acrescido, mostrando apenas que [brincar] pode servir como meio de conexão e partilha, auto-descoberta e aprendizagem, através da exploração de novos territórios, na criação de uma experiência única e pessoal, apenas limitada pela imaginação. <br>isto é refletido e analisado nos artefactos apresentados de seguida, únicos e exclusivamente seus, transformando em arte visual / sonora o modo como interage com o mundo e com os outros através do [brincar].";
+        document.getElementById("advance").innerHTML = "[avançar >]";
+        document.querySelector("#score legend").innerHTML = "[guião]";  
+    }
+    else {
+        progressLoaderText = ['loading', 'loading.', 'loading..', 'loading...'];
+        let leg = "<legend>[prologue]</legend>";
+        document.getElementById("prologue").innerHTML = leg + "so? did you have fun?<br>this page serves as a little interlude to the experience, while the [player] waits for the development / generation of the three play-related artifacts, take it as a waiting room. so this might also be a good place to explore the core concepts of the project a little further. <br>[play] is fundamentally defined as a unproductive, unbothered activity, with no associated seriousness, meaning or goal (Huizinga, 1938), but theoretical definitions to the side, [play] can be characterized as one of the main <i>humane</i> foundational activities, being present in many unrelated fields, such as art, science or education, and being a imperative part in our society's development and evolution.<br>[play] can be found everywhere, mainly due to the fact that everything can be [played] with, no matter what or where, which allows for the definition of [play] as an appropriative attitude, that takes over a context turning it into something more playful and unserious. [play] as mentioned before, it's fundamental for humans, among other animals, being one of the first activities performed when children are born, being the one to which [play] is more closely related, but it can also be found in more adult-like contexts such as means of artistic expression (music, theater, performance), political satire, comedy, parties and events, among others.<br>[play] as an attitude can be something fully expressive, revealing the inner characteristics within a [player], by the way the activity is approached, allowing for a more complete understanding people, things and even the world, making it only logical to correlate [play] and personality on a explorative artistic experience, such as this one. :) <br>furthermore, technology can be closely associated with [play], further enabling the playable capabilities of a <i>medium</i> while building new [playgrounds] to explore, but lately the opposite has been observed. with greater technological advancements, people have stopped [playing], being caught up by the increasing velocity of the world around-the, emerging an ever-growing need for constant entertainment, seriousness and accomplishment, which mitigates the possibilities for [playfulness] to appear. this, added up with the evolving isolation and selfishness leads to a [dis]connected world that is no fun to live in. <br>this project emerges from an idea of [re]connection through [play], connecting people and the world, while taking advantage of technological advancements in order to create new spaces to [play], discover, reflect and discuss (all being parts of [playing]), with no further seriousness, meaning or goal than showing that [play] can be used as a matter of connection and self-discovery, allowing for the exploration of new territories while crafting an unique and personal experience, only limited by what imagination can achieve. <br>this is reflected and analyzed on the artifacts created, uniquely and truly yours, transforming into visual/audible art the way in which you interact with the world and others through [play].";
+    
+    }
+
+    document.getElementById('advance').addEventListener("click", () => {
+        location.href = "./performance.html?lang=" + qs;
+    });
+</script>
+<script src="./script/creating.js"></script>
+</script>
+
+</html>

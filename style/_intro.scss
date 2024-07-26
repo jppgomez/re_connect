@@ -1,0 +1,31 @@
+@import "./variables.scss";
+
+#intro_text {
+    box-sizing: border-box;
+    border: 2.5px solid $acc_color;
+    grid-column: 3 / 11;
+    grid-row: 4 / 8;
+    color: $acc_color;
+    font-family: "Roboto Mono Regular";
+    font-size: $text_med_size;
+    padding: $gap_desktop;
+
+    text-align: center;
+    display:table-cell;
+    align-content:center;
+}
+
+#intro_advance {
+    font-size: $text_min_size;
+    grid-column: 10 / 11;
+    grid-row: 8 / 9;
+    height: math.div($row_desktop, 2);
+}
+
+#intro_logo_img{
+    grid-column: 6 / 8;
+    grid-row: 9 / 10;
+    img{
+        width:70%;
+    }
+}

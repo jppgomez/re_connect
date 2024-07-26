@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>[Re]Connect - [enter]</title>  
+    <link rel="stylesheet" href="./style/general.css">
+    <link rel="icon" href="./assets/Logo.svg" sizes="any" type="image/svg+xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body> 
+    <audio id="bg_audio" loop><source src="./assets/Ambient_BG.mp3" type="audio/mpeg"></audio>
+    <div id="overlay_texture"></div>
+    <div id="button_container"><button id="enter_button">[enter]</button></div>
+    <div id="descript">
+        <img id="descript_logo" src="./assets/LogoHoriz.svg">
+        <div id="descript_text"><b>[note:]</b> turn your device horizontally and wear </br> headphones for a better experience.</div>
+    </div>
+</body>
+<script>
+    let audio = document.getElementById("bg_audio");
+    window.onload = function(){
+        audio.play();
+        audio.volume = 0.3;
+    }
+
+    var qs = parent.document.URL.substring(parent.document.URL.indexOf('?lang=')+6, parent.document.URL.indexOf('?lang=')+9);
+    let language = qs;
+
+    if(language == 'prt'){
+        document.getElementById("descript_text").innerHTML = "<b>[nota:]</b> virar o dispositivo horizontalmente e utilizar </br> <i>headphones</i> para uma melhor experiência."
+        document.getElementById("enter_button").innerHTML = "[entrar]";
+    }
+
+    let btn = document.getElementById("enter_button").addEventListener("click", () => {
+        let prog = audio.currentTime;
+        location.href = "./intro.html?lang=" + qs + '&t=' + prog;
+        
+    });
+</script>
+</html>

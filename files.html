@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>[Re]Connect - [files]</title>
+    <link rel="stylesheet" href="./style/general.css">
+    <link rel="icon" href="./assets/Logo.svg" sizes="any" type="image/svg+xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@v0.166.1/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.166.1/examples/jsm/"
+          }
+        }
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"
+        integrity="sha512-zInFF17qBFVvvvFpIfeBzo7Tj7+rQxLeTJDmbxjBz5/zIr89YVbTNelNhdTT+/DCrxoVzBeUPVFJsczKbB7sew=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <style>
+        canvas{
+            display:none;
+        }
+      </style>
+</head>
+<body>
+    <audio id="bg_audio" loop>
+        <source src="./assets/Ambient_BG.mp3" type="audio/mpeg">
+    </audio>
+    <div id="overlay_texture"></div>
+    <div id="files_files" class="nav_bar"><b>[files]</b></div>
+    <div id="files_archive" class="nav_bar">[archive]</div>
+    <div id="files_about" class="nav_bar">[about]</div>
+    <div id="files_credits" class="nav_bar">[credits]</div>
+
+    <div id="files_machine"><img src="./assets/Toy_Crane.svg"></div>
+    <fieldset id="files_score">
+        <legend style="width: 40%;">[visual score]</legend>
+        <img id="files_score">
+    </fieldset>
+    <fieldset id="files_marble">
+        <legend style="width: 30%;">[marble]</legend>
+    </fieldset>
+    <fieldset id="files_ambient">
+        <legend style="width: 30%;">[ambient]</legend>
+        <img id="files_ambient">
+    </fieldset>
+
+    <div id="download_note"><b>[note:]</b> click the file boxes to download them locally</div>
+
+</body>
+<script>
+    let audio = document.getElementById("bg_audio");
+    window.onload = function () {
+        audio.play();
+        audio.volume = 0.1;
+    }
+
+    let files = document.getElementById('files_files');
+    let archive = document.getElementById('files_archive');
+    let about = document.getElementById('files_about');
+    let credits = document.getElementById('files_credits')
+
+    var qs = parent.document.URL.substring(parent.document.URL.indexOf('?lang=') + 6, parent.document.URL.indexOf('?lang=') + 9);
+    let language = qs;
+
+    let downloadText;
+    if (qs == 'prt') downloadText = '<b>[nota]:</b> clicar nos ficheros para os descarregar localmente';
+    else downloadText = '<b>[note:]</b> click the file boxes to download them locally';
+
+    if (qs == "prt") {
+        files.innerHTML = '<b>[ficheiros]</b>';
+        archive.innerHTML = '[arquivo]';
+        credits.innerHTML = '[créditos]';
+        about.innerHTML = '[sobre]';
+
+        document.querySelector("#files_score legend").innerHTML = "[guião visual]";
+        document.querySelector("#files_marble legend").innerHTML = "[berlinde]";
+        document.querySelector("#files_ambient legend").innerHTML = "[ambiente]";
+    }
+</script>
+<script src="./script/files.js"></script>
+<script type="module" src="./script/marble3d.js"></script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>[Re]Connect - [playground]</title>
+    <link rel="stylesheet" href="./style/general.css">
+    <link rel="icon" href="./assets/Logo.svg" sizes="any" type="image/svg+xml">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    canvas{
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+  </style>
+
+<body>
+    <audio id="bg_audio" loop><source src="./assets/Ambient_BG.mp3" type="audio/mpeg"></audio>
+    <div id="overlay_texture"></div>
+    <div id="selectGame" class="playground_div">
+            <div id="GM0" class="playground_div">[00]</div>
+            <div id="GM1" class="playground_div">[01]</div>
+            <div id="GM2" class="playground_div">[02]</div>
+            <div id="GM3" class="playground_div">[03]</div>
+            <div id="GM4" class="playground_div">[04]</div>
+            <div id="GM5" class="playground_div">[05]</div>
+            <div id="GM6" class="playground_div">[06]</div>
+            <div id="GM7" class="playground_div">[07]</div>
+        </div>
+        <div id="scoreLog" class="playground_div">
+            [reach 15 points] <br>
+            current score: 0
+        </div>
+        <div id="exit" class="playground_div">
+            <button>[exit]</button>
+        </div>
+    <script src="./script/play.js"></script>
+</body>
+<script>
+    let audio = document.getElementById("bg_audio");
+    window.onload = function(){
+       let prog = parent.document.URL.substring(parent.document.URL.indexOf('?lang=') + 12, parent.document.URL.length-1);
+       audio.currentTime = prog;
+       audio.play();
+       audio.volume = 0.1;
+    }
+
+    var qs = parent.document.URL.substring(parent.document.URL.indexOf('?lang=')+6, parent.document.URL.indexOf('?lang=')+9);
+    if(qs == 'prt'){
+        document.getElementById("scoreLog").innerHTML = "[atigir 15 pontos] <br> pontuação atual: 0";
+        document.querySelector("button").innerHTML = "[sair]";
+    }
+</script>
+</html>

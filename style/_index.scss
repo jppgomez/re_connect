@@ -1,0 +1,36 @@
+@import './variables.scss';
+
+#select_lang_container {
+    grid-column: 5 / 9;
+    grid-row: 5 / 7;
+    display: flex;
+    align-items: center;
+    padding: 0.75*$gap_desktop math.div($gap_desktop, 2);
+    display:flex;
+    justify-content: space-evenly;
+
+    legend{
+        text-align:center;
+        width:40%;
+    }
+
+    div{
+        width: 40%;
+        height: 100%;
+        border: 1px solid $acc_color;
+        background-position: center;
+        background-size: cover;
+    }
+
+    div:hover{
+        cursor: url('../assets/PointerCursor.svg'),pointer;
+    }
+
+    #lang_pt{
+        background-image: url("../assets/flags/PT_Reg.svg");
+    }
+    #lang_eng{
+        background-image: url("../assets/flags/UK_Reg.svg");
+    }
+
+}

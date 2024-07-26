@@ -1,0 +1,59 @@
+@import './variables.scss';
+
+#files_machine{
+    grid-row: 3 / 9;
+    grid-column: 2 / 5;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+
+    img{
+        height:95%;
+    }
+}
+
+#files_score, #files_marble{
+    background-position: center center;
+    background-size: auto 100%;
+    background-repeat:no-repeat;
+}
+
+#files_score{
+    grid-column: 5 / 9;
+    grid-row: 3 / 9; 
+}
+
+#files_marble{
+    grid-column: 9 / 12;
+    grid-row: 3 / 7;
+}
+
+#files_ambient{
+    grid-column: 9 / 12;
+    grid-row: 7 / 9;
+    background-image: url("../assets/AudioWVFRM.svg");
+    background-position: center center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+#files_score, #files_marble, #files_ambient{
+    cursor: url('../assets/PointerCursor.svg'), pointer;
+    background-color: $bg_color;
+}
+
+#download_note{
+    grid-column: 4 / 10;
+    grid-row: 9 / 10;
+
+    color: $acc_color;
+    font-family: "Roboto Mono Thin";
+    font-size: $text_min_size;
+    text-align: center;
+
+    //display:flex;
+    justify-content:center;
+    align-items:center;
+
+    display:none;
+}

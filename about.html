@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>[Re]Connect - [about]</title>
+    <link rel="stylesheet" href="./style/general.css">
+    <link rel="icon" href="./assets/Logo.svg" sizes="any" type="image/svg+xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <audio id="bg_audio" loop>
+        <source src="./assets/Ambient_BG.mp3" type="audio/mpeg">
+    </audio>
+    <div id="overlay_texture"></div>
+    <div id="about_files" class="nav_bar">[files]</div>
+    <div id="about_archive" class="nav_bar">[archive]</div>
+    <div id="about_about" class="nav_bar"><b>[about]</b></div>
+    <div id="about_credits" class="nav_bar">[credits]</div>
+
+    <fieldset id="about_text">
+        <legend>[about]</legend>
+    </fieldset>
+    <div id="about_logo_img">
+        <img id="descript_logo" src="./assets/LogoHoriz.svg">
+    </div>
+    <button id="download_thesis">[download - soon]</button><!--UPDATE-->
+</body>
+<script>
+let audio = document.getElementById("bg_audio");
+    window.onload = function(){
+       let prog = parent.document.URL.substring(parent.document.URL.indexOf('?lang=') + 12, parent.document.URL.length-1);
+       audio.currentTime = prog;
+       audio.play();
+       audio.volume = 0.1;
+    }
+
+    var qs = parent.document.URL.substring(parent.document.URL.indexOf('?lang=') + 6, parent.document.URL.indexOf('?lang=') + 9);
+    let language = qs;
+
+    let files = document.getElementById('about_files');
+    let archive = document.getElementById('about_archive');
+    let credits = document.getElementById('about_credits');
+    let about = document.getElementById('about_about');
+    let aboutText = document.getElementById('about_text');
+    let aboutTextLegend = document.querySelector('#about_text legend');
+
+    files.addEventListener("click", () => {
+        let prog = audio.currentTime;
+        location.href = "./files.html?lang=" + qs + '&t=' + prog});
+    archive.addEventListener("click", () => {
+        let prog = audio.currentTime;
+        location.href = "./archive.html?lang=" + qs + '&t=' + prog});
+    credits.addEventListener("click", () => {
+        let prog = audio.currentTime;
+        location.href = "./credits.html?lang=" + qs + '&t=' + prog});
+
+    const link = document.createElement('a');
+    link.style.display = 'none';
+    document.body.appendChild(link);
+
+    let downloadBtn = document.getElementById("download_thesis");
+    downloadBtn.addEventListener("click", () => {
+        link.href = "./assets/Persona_Gradient.png"; //UPDATE
+        link.download = "[re]connect_master_thesis_João_Pedro_Gomes_final.png";
+        link.click();
+    });
+
+    if (qs == "prt") {
+        files.innerHTML = '[ficheiros]';
+        archive.innerHTML = '[arquivo]';
+        credits.innerHTML = '[créditos]';
+        about.innerHTML = '<b>[sobre]</b>';
+        //aboutText.innerHTML = ''
+        aboutTextLegend.innerHTML = '[sobre]';
+        let leg = "<legend>[sobre]</legend>";
+        aboutText.innerHTML = leg + "[re]connect é um projeto desenvolvido com o objetivo de definir uma nova abordagem sistemática para a análise de <i>play-data</i> (dados de [brincar]), através da geração de artefactos digitais no meio da <i>data-art</i>, que de algum modo explorem a capacidade expressiva desta atividade, ao mesmo tempo que servem como peças de pesquisa acerca da expressividade do meio. tudo isto é reduzido a uma <i>performace</i> audiovisual (para a <i>web</i>) que servirá esperançosamente como propulsor de uma discussão acerca das temáticas mencionadas previamente, ou consistirá apenas num espaço de exploração, admiração e relaxamento por entre os meandros do [brincar], encorajando, de algum modo, o público, a voltar a [brincar]. <br>este projeto foi desenvolvido na sua totalidade por mim (João), mas não seria possível sem a ajuda de todas as pessoas bonitas referenciadas na página de [créditos], e serve como parte do meu projeto final / dissertação / estágio de mestrado (partindo da premissa: [from play data to audiovisual performance]), contém assim de tudo um pouco daquilo que aprendi nos últimos cinco anos da licenciatura e mestrado em design e multimédia em Coimbra (FCTUC), bem como um pouco daquilo que sou e dos meus interesses pessoais. espero que tenha sido bem recebido e se quiserem saber um pouco mais sobre o tema, estejam à vontade para descarregar a minha dissertação através do botão abaixo. (brevemente) <br>obrigado. :)";
+        downloadBtn.innerHTML = "[descarregar - em breve]"
+    }
+    else {
+        let leg = "<legend>[about]</legend>";
+        aboutText.innerHTML = leg + "[re]connect is a project developed with the aim to create a systematic approach to play-data analysis, through the production of digital data-art pieces that explore this activity's expressive capability, at the same time it serves as a piece of research around data-art's own expressive ability. this is all encapsulated into an web-based audiovisual performance, that will hopefully start a discussion about the topics mentioned previously or at least serve as a space to wonder, explore and relax within the unseriousness of [play], somehow encouraging people to [play] again. <br>this project was developed in its totality by myself (João), but made possible with the help of all the lovely people presented  in the [credits] tab, part of my final project / master's thesis (starting from the premise: [from play data to audiovisual performance]), containing a little bit of everything that I learned along the last five years of the bachelor's and master's degrees in design & multimedia in Coimbra (FCTUC), as well as a bit of who I am and my personal interests too. really hope you enjoyed it and if you want to find out more about the project feel free to download my thesis by clicking the button below. (coming soon) <br>thank you. :)";
+    }
+</script>
+
+</html>

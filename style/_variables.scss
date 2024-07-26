@@ -1,0 +1,26 @@
+$gap_desktop: math.div(30px, 1920px)*100vw;
+$gapH_desktop: math.div(30px, 1080px)*100vh;
+$col_desktop: math.div(100vw - (11*$gap_desktop), 12);
+$row_desktop: math.div(100vh - (9*$gapH_desktop), 10);
+
+$bg_color: #0a0a0a;
+$acc_color: #ffffff;
+
+$text_min_size: math.div(15px, 1920px)*100vw;
+$text_med_size: math.div(20px, 1920px)*100vw;
+$text_max_size: math.div(30px, 1920px)*100vw;
+
+@font-face{
+    font-family: 'Roboto Mono Thin';
+    src: url('../assets/fonts/RobotoMono-Thin.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Roboto Mono Medium';
+    src: url('../assets/fonts/RobotoMono-Medium.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Roboto Mono Regular';
+    src: url('../assets/fonts/RobotoMono-Regular.ttf') format('truetype');
+}
