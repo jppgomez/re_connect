@@ -399,27 +399,27 @@ function preload() {
     re_logo = loadImage('./assets/Logo.svg');
 
     //ambient
-    LoadedAudioBuffer[0] = new Tone.ToneAudioBuffer("../assets/sound/GrainPlayer/1.mp3", () => {
-        LoadedAudioBuffer[1] = new Tone.ToneAudioBuffer("../assets/sound/GrainPlayer/2.mp3", () => {
-            LoadedAudioBuffer[2] = new Tone.ToneAudioBuffer("../assets/sound/GrainPlayer/3.mp3", () => {
-                LoadedAudioBuffer[3] = new Tone.ToneAudioBuffer("../assets/sound/GrainPlayer/4.mp3", () => {
-                    BirdSongBuffer = new Tone.ToneAudioBuffer("../assets/sound/Birds.mp3", () => {
-                        VinylBuffer = new Tone.ToneAudioBuffer("../assets/sound/Vinyl.mp3", () => {
-                            choirBuffer[0] = new Tone.ToneAudioBuffer("../assets/sound/Choir/C3.mp3", () => {
-                                choirBuffer[1] = new Tone.ToneAudioBuffer("../assets/sound/Choir/E3.mp3", () => {
-                                    choirBuffer[2] = new Tone.ToneAudioBuffer("../assets/sound/Choir/G3.mp3", () => {
-                                        choirBuffer[3] = new Tone.ToneAudioBuffer("../assets/sound/Choir/B3.mp3", () => {
-                                            oscPianoBuffer[0] = new Tone.ToneAudioBuffer("../assets/sound/PianoTape/A3.mp3", () => {
-                                                oscPianoBuffer[1] = new Tone.ToneAudioBuffer("../assets/sound/PianoTape/C3.mp3", () => {
-                                                    oscPianoBuffer[2] = new Tone.ToneAudioBuffer("../assets/sound/PianoTape/C4.mp3", () => {
-                                                        oscPianoBuffer[3] = new Tone.ToneAudioBuffer("../assets/sound/PianoTape/E3.mp3", () => {
-                                                            vocalBuffer[0] = new Tone.ToneAudioBuffer("../assets/sound/Vocals/Benzi.mp3", () => {
-                                                                vocalBuffer[1] = new Tone.ToneAudioBuffer("../assets/sound/Vocals/Eno.mp3", () => {
-                                                                    vocalBuffer[2] = new Tone.ToneAudioBuffer("../assets/sound/Vocals/Fred1.mp3", () => {
-                                                                        vocalBuffer[3] = new Tone.ToneAudioBuffer("../assets/sound/Vocals/Fred2.mp3", () => {
-                                                                            vocalBuffer[4] = new Tone.ToneAudioBuffer("../assets/sound/Vocals/Huizinga.mp3", () => {
-                                                                                vocalBuffer[5] = new Tone.ToneAudioBuffer("../assets/sound/Vocals/Ikeda.mp3", () => {
-                                                                                    vocalBuffer[6] = new Tone.ToneAudioBuffer("../assets/sound/Vocals/Refik.mp3", () => {
+    LoadedAudioBuffer[0] = new Tone.ToneAudioBuffer("./assets/sound/GrainPlayer/1.mp3", () => {
+        LoadedAudioBuffer[1] = new Tone.ToneAudioBuffer("./assets/sound/GrainPlayer/2.mp3", () => {
+            LoadedAudioBuffer[2] = new Tone.ToneAudioBuffer("./assets/sound/GrainPlayer/3.mp3", () => {
+                LoadedAudioBuffer[3] = new Tone.ToneAudioBuffer("./assets/sound/GrainPlayer/4.mp3", () => {
+                    BirdSongBuffer = new Tone.ToneAudioBuffer("./assets/sound/Birds.mp3", () => {
+                        VinylBuffer = new Tone.ToneAudioBuffer("./assets/sound/Vinyl.mp3", () => {
+                            choirBuffer[0] = new Tone.ToneAudioBuffer("./assets/sound/Choir/C3.mp3", () => {
+                                choirBuffer[1] = new Tone.ToneAudioBuffer("./assets/sound/Choir/E3.mp3", () => {
+                                    choirBuffer[2] = new Tone.ToneAudioBuffer("./assets/sound/Choir/G3.mp3", () => {
+                                        choirBuffer[3] = new Tone.ToneAudioBuffer("./assets/sound/Choir/B3.mp3", () => {
+                                            oscPianoBuffer[0] = new Tone.ToneAudioBuffer("./assets/sound/PianoTape/A3.mp3", () => {
+                                                oscPianoBuffer[1] = new Tone.ToneAudioBuffer("./assets/sound/PianoTape/C3.mp3", () => {
+                                                    oscPianoBuffer[2] = new Tone.ToneAudioBuffer("./assets/sound/PianoTape/C4.mp3", () => {
+                                                        oscPianoBuffer[3] = new Tone.ToneAudioBuffer("./assets/sound/PianoTape/E3.mp3", () => {
+                                                            vocalBuffer[0] = new Tone.ToneAudioBuffer("./assets/sound/Vocals/Benzi.mp3", () => {
+                                                                vocalBuffer[1] = new Tone.ToneAudioBuffer("./assets/sound/Vocals/Eno.mp3", () => {
+                                                                    vocalBuffer[2] = new Tone.ToneAudioBuffer("./assets/sound/Vocals/Fred1.mp3", () => {
+                                                                        vocalBuffer[3] = new Tone.ToneAudioBuffer("./assets/sound/Vocals/Fred2.mp3", () => {
+                                                                            vocalBuffer[4] = new Tone.ToneAudioBuffer("./assets/sound/Vocals/Huizinga.mp3", () => {
+                                                                                vocalBuffer[5] = new Tone.ToneAudioBuffer("./assets/sound/Vocals/Ikeda.mp3", () => {
+                                                                                    vocalBuffer[6] = new Tone.ToneAudioBuffer("./assets/sound/Vocals/Refik.mp3", () => {
                                                                                         AudioBuffer = LoadedAudioBuffer[0];
                                                                                         Tone.start();
                                                                                         Tone.Transport.bpm.value = ambientSettings.bpm;
