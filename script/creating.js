@@ -1,8 +1,8 @@
 //buttons appearance change
-document.getElementById("play").addEventListener("mouseenter", () => document.getElementById("play_img").src = "../assets/icons/PlayFull.svg");
-document.getElementById("play").addEventListener("mouseleave", () => document.getElementById("play_img").src = "../assets/icons/Play.svg");
-document.getElementById("pause").addEventListener("mouseenter", () => document.getElementById("pause_img").src = "../assets/icons/PauseFull.svg");
-document.getElementById("pause").addEventListener("mouseleave", () => document.getElementById("pause_img").src = "../assets/icons/Pause.svg");
+document.getElementById("play").addEventListener("mouseenter", () => document.getElementById("play_img").src = "./assets/icons/PlayFull.svg");
+document.getElementById("play").addEventListener("mouseleave", () => document.getElementById("play_img").src = "./assets/icons/Play.svg");
+document.getElementById("pause").addEventListener("mouseenter", () => document.getElementById("pause_img").src = "./assets/icons/PauseFull.svg");
+document.getElementById("pause").addEventListener("mouseleave", () => document.getElementById("pause_img").src = "./assets/icons/Pause.svg");
 document.getElementById("volume_mute").addEventListener("mouseenter", () => {
     if (document.getElementById("volume_mute").classList.contains("mute")) document.getElementById("volume_img").src = "./assets/icons/VolumeOffFull.svg";
     else document.getElementById("volume_img").src = "./assets/icons/VolumeOnFull.svg";
