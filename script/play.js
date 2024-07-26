@@ -84,7 +84,7 @@ let data = {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   ellipseMode(CENTER);
-  font = loadFont('./assets/fonts/RobotoMono-Regular.ttf');
+  font = loadFont('../assets/fonts/RobotoMono-Regular.ttf');
   textFont(font);
   imageMode(CENTER);
   textAlign(CENTER,CENTER);
