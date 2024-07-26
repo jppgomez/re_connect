@@ -4,12 +4,12 @@ document.getElementById("play").addEventListener("mouseleave", () => document.ge
 document.getElementById("pause").addEventListener("mouseenter", () => document.getElementById("pause_img").src = "../assets/icons/PauseFull.svg");
 document.getElementById("pause").addEventListener("mouseleave", () => document.getElementById("pause_img").src = "../assets/icons/Pause.svg");
 document.getElementById("volume_mute").addEventListener("mouseenter", () => {
-    if (document.getElementById("volume_mute").classList.contains("mute")) document.getElementById("volume_img").src = "../assets/icons/VolumeOffFull.svg";
-    else document.getElementById("volume_img").src = "../Assets/Icons/VolumeOnFull.svg";
+    if (document.getElementById("volume_mute").classList.contains("mute")) document.getElementById("volume_img").src = "./assets/icons/VolumeOffFull.svg";
+    else document.getElementById("volume_img").src = "./assets/icons/VolumeOnFull.svg";
 });
 document.getElementById("volume_mute").addEventListener("mouseleave", () => {
-    if (document.getElementById("volume_mute").classList.contains("mute")) document.getElementById("volume_img").src = "../assets/icons/VolumeOff.svg";
-    else document.getElementById("volume_img").src = "../assets/icons/VolumeOn.svg";
+    if (document.getElementById("volume_mute").classList.contains("mute")) document.getElementById("volume_img").src = "./assets/icons/VolumeOff.svg";
+    else document.getElementById("volume_img").src = "./assets/icons/VolumeOn.svg";
 });
 
 //footer button action
@@ -393,10 +393,10 @@ function getData() {
 function preload() {
     getJSON("application/json");
     //score
-    bgTexture = loadImage('../assets/textures/paint.jpg');
-    robotoThin = loadFont('../assets/fonts/RobotoMono-Thin.ttf');
-    robotoMedium = loadFont('../assets/fonts/RobotoMono-Medium.ttf');
-    re_logo = loadImage('../assets/Logo.svg');
+    bgTexture = loadImage('./assets/textures/paint.jpg');
+    robotoThin = loadFont('./assets/fonts/RobotoMono-Thin.ttf');
+    robotoMedium = loadFont('./assets/fonts/RobotoMono-Medium.ttf');
+    re_logo = loadImage('./assets/Logo.svg');
 
     //ambient
     LoadedAudioBuffer[0] = new Tone.ToneAudioBuffer("../assets/sound/GrainPlayer/1.mp3", () => {

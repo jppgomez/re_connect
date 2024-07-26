@@ -59,16 +59,16 @@ function setImages(){
         console.log(finalCombo[c]);
         if(finalCombo[c] == 'vert'){
             randImg = Math.floor(random(1, vertImgCount));
-            imgPath = '../assets/archive/Vertical/'+randImg+'.jpg';
+            imgPath = './assets/archive/Vertical/'+randImg+'.jpg';
            
         }
         else if(finalCombo[c] == 'horiz'){
             randImg = Math.floor(random(1, horizImgCount));
-            imgPath = '../assets/archive/Horizontal/'+randImg+'.jpg';
+            imgPath = './assets/archive/Horizontal/'+randImg+'.jpg';
         }
         else if(finalCombo[c] == 'square'){
             randImg = Math.floor(random(1, sqImgCount));
-            imgPath = '../assets/archive/Square/'+randImg+'.jpg';
+            imgPath = './assets/archive/Square/'+randImg+'.jpg';
         }
 
         if(finalCombo[c]!='none'){

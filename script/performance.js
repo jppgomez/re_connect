@@ -1,17 +1,17 @@
 let stateTextArray = pausedArray, stateTextTime = 0, stateTextCurrent = 0;
 let stateText = document.getElementById("state_text");
 //buttons appearance change
-document.getElementById("play").addEventListener("mouseenter", () => document.getElementById("play_img").src = "../assets/icons/PlayFull.svg");
-document.getElementById("play").addEventListener("mouseleave", () => document.getElementById("play_img").src = "../assets/icons/Play.svg");
-document.getElementById("pause").addEventListener("mouseenter", () => document.getElementById("pause_img").src = "../assets/icons/PauseFull.svg");
-document.getElementById("pause").addEventListener("mouseleave", () => document.getElementById("pause_img").src = "../assets/icons/Pause.svg");
+document.getElementById("play").addEventListener("mouseenter", () => document.getElementById("play_img").src = "./assets/icons/PlayFull.svg");
+document.getElementById("play").addEventListener("mouseleave", () => document.getElementById("play_img").src = "./assets/icons/Play.svg");
+document.getElementById("pause").addEventListener("mouseenter", () => document.getElementById("pause_img").src = "./assets/icons/PauseFull.svg");
+document.getElementById("pause").addEventListener("mouseleave", () => document.getElementById("pause_img").src = "./assets/icons/Pause.svg");
 document.getElementById("volume_mute").addEventListener("mouseenter", () => {
-    if (document.getElementById("volume_mute").classList.contains("mute")) document.getElementById("volume_img").src = "../assets/icons/VolumeOffFull.svg";
-    else document.getElementById("volume_img").src = "../assets/icons/VolumeOnFull.svg";
+    if (document.getElementById("volume_mute").classList.contains("mute")) document.getElementById("volume_img").src = "./assets/icons/VolumeOffFull.svg";
+    else document.getElementById("volume_img").src = "./assets/icons/VolumeOnFull.svg";
 });
 document.getElementById("volume_mute").addEventListener("mouseleave", () => {
-    if (document.getElementById("volume_mute").classList.contains("mute")) document.getElementById("volume_img").src = "../assets/icons/VolumeOff.svg";
-    else document.getElementById("volume_img").src = "../assets/icons/VolumeOn.svg";
+    if (document.getElementById("volume_mute").classList.contains("mute")) document.getElementById("volume_img").src = "./assets/icons/VolumeOff.svg";
+    else document.getElementById("volume_img").src = "./assets/icons/VolumeOn.svg";
 });
 
 let progressBar = document.getElementById("load_prog");
@@ -326,7 +326,7 @@ function getData() {
 }
 
 function preload() {
-    robotoThin = loadFont('../assets/fonts/RobotoMono-Thin.ttf');
+    robotoThin = loadFont('./assets/fonts/RobotoMono-Thin.ttf');
     getFromDB("audio/wav");
 }
 

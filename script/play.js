@@ -84,7 +84,7 @@ let data = {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   ellipseMode(CENTER);
-  font = loadFont('../assets/fonts/RobotoMono-Regular.ttf');
+  font = loadFont('./assets/fonts/RobotoMono-Regular.ttf');
   textFont(font);
   imageMode(CENTER);
   textAlign(CENTER,CENTER);
@@ -113,7 +113,7 @@ function draw() {
 
 
   //PLAY SCREEN
-  cursor('../assets/MainCursor.svg');
+  cursor('./assets/MainCursor.svg');
   time = roundToTwo(frameCount/frameRate());
   for(let i = 0; i < dots.length; i++) dots[i].show();  
 
