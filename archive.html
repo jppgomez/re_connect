@@ -50,6 +50,7 @@
     let advance = document.getElementById('archive_advance');
     //let ret = document.getElementById('archive_return');
 
+    let prog = audio.currentTime;
     files.addEventListener("click", () => location.href = "./files.html?lang=" + qs + '&t=' + prog);
     credits.addEventListener("click", () => location.href = "./credits.html?lang=" + qs + '&t=' + prog);
     about.addEventListener("click", () => location.href = "./about.html?lang=" + qs + '&t=' + prog);
