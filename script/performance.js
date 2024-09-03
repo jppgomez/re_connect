@@ -206,8 +206,8 @@ let settings0910 = {
     canvas: 0,
     ellipse: 0,
     frameInterval: 4,
-    maxMoveDesloc: 4,
-    maxMovePoints: 4,
+    maxMoveDesloc: 100,
+    maxMovePoints: 10,
 
     pointsOfSelect: [],
 
@@ -223,7 +223,7 @@ let settings1112 = {
     canvas: 0,
     ellipse: 0,
     frameInterval: 2,
-    maxText: 6,
+    maxText: 40,
 
     draw11: false,
     draw12: true,
