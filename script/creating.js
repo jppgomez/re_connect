@@ -1400,7 +1400,7 @@ function runAmbient() {
             progressDiv.style.width = '100%';
             //console.log(int(frameCount / frameRate()));
 
-            let cv = document.querySelector("canvas")
+            let cv = document.querySelector("canvas");
             let canvasBlob = cv.toBlob((blob) => {
                 console.log(blob);
                 uploadToDb(blob);
